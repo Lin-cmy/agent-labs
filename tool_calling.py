@@ -93,7 +93,7 @@ def run_agent(query: str) -> str:
                     content=observation,
                     tool_call_id=tool_call["id"]
                 ))
-                
+
             write_trace(step, tool_call["name"], tool_call["args"], observation, response.usage_metadata["total_tokens"])
         else:
             return response.content
@@ -119,7 +119,8 @@ if __name__ == "__main__":
         "查一下北京和广州的天气",
         "看看这个目录下有哪些 .py 文件",
         "先算 123*456 是多少，再查一下上海的天气",
-        "查一下火星的天气"
+        "查一下火星的天气",
+        "一千一百减九十九等于多少"
     ]
 
     for task in TASKS:

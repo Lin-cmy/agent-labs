@@ -5,3 +5,9 @@
 {"step": 0, "thought_summary": "", "tool": "calculate", "args": {"expression": "123*456"}, "observation": "123*456 = 56088", "cost_estimate": 628}
 {"step": 0, "thought_summary": "", "tool": "get_weather", "args": {"city": "上海"}, "observation": "上海 天气: 小雨，22℃", "cost_estimate": 628}
 {"step": 0, "thought_summary": "", "tool": "get_weather", "args": {"city": "火星"}, "observation": "未知城市: 火星", "cost_estimate": 584}
+{"step": 0, "thought_summary": "", "tool": "calculate", "args": {"expression": "(23+7)*3"}, "observation": "(23+7)*3 = 90", "cost_estimate": 594}
+{"step": 0, "thought_summary": "", "tool": "get_weather", "args": {"city": "广州"}, "observation": "广州 天气: 多云转雷阵雨，31℃", "cost_estimate": 615}
+{"step": 0, "thought_summary": "", "tool": "search_files", "args": {"keyword": ".py"}, "observation": "- agent_loop.py\n- tool_calling.py", "cost_estimate": 588}
+{"step": 0, "thought_summary": "", "tool": "get_weather", "args": {"city": "上海"}, "observation": "上海 天气: 小雨，22℃", "cost_estimate": 628}
+{"step": 0, "thought_summary": "", "tool": "get_weather", "args": {"city": "火星"}, "observation": "未知城市: 火星", "cost_estimate": 584}
+{"step": 0, "thought_summary": "", "tool": "calculate", "args": {"expression": "1100-99"}, "observation": "1100-99 = 1001", "cost_estimate": 587}
