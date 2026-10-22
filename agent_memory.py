@@ -5,6 +5,8 @@ from langchain_openai import ChatOpenAI
 from langchain_core.messages import SystemMessage, HumanMessage, AIMessage, ToolMessage
 from langchain_core.tools import tool
 
+from tenacity import retry, stop_after_attempt, wait_exponential, retry_if_exception_type
+
 llm = ChatOpenAI(
     model="deepseek-chat",
     api_key=os.getenv("DEEPSEEK_API_KEY"),
@@ -130,7 +132,8 @@ class ChatAgent:
         self.messages.append(HumanMessage(user_input))
 
         for step in range(MAX_STEPS):
-            response = self.llm_with_tools.invoke(self.messages)
+            # response = self.llm_with_tools.invoke(self.messages)
+            response = self._call_llm_with_retry()
 
             if response.tool_calls:
                 self.messages.append(response)
@@ -146,6 +149,16 @@ class ChatAgent:
                 self.messages.append(AIMessage(response.content))
                 return response.content
         return "达到最大步数上限，任务未完成"
+
+    @retry(
+        stop=stop_after_attempt(3),
+        wait=wait_exponential(multiplier=1, min=1, max=10),
+        retry=retry_if_exception_type(Exception),
+        reraise=True,
+        before_sleep=lambda s: print(f"⚠️ 调用失败，第 {s.attempt_number} 次尝试，{s.next_action.sleep:.0f}s 后重试")
+    )
+    def _call_llm_with_retry(self):
+        return self.llm_with_tools.invoke(self.messages)
 
 
 if __name__ == "__main__":
