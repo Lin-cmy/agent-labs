@@ -1,3 +1,12 @@
+"""
+Day 6 练习：多轮对话记忆 + 指数退避重试
+
+- ChatAgent 类：messages 列表跨轮次保留——记忆 = 完整对话历史（用户输入与助手回答都要追加）
+- tenacity 重试：LLM 调用失败时指数退避重试（1s→2s→4s），3 次耗尽后 reraise
+- 记忆验证方式：第二轮用代词指代第一轮内容（如"总结一下我刚才问了什么"）
+
+运行：python agent_memory.py（交互式对话，输入"退出"结束；需要 DEEPSEEK_API_KEY）
+"""
 import json
 import os
 

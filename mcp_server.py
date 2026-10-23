@@ -1,3 +1,13 @@
+"""
+Day 5 练习：MCP 工具服务器（FastMCP，stdio 传输）
+
+- 把 Day 1-2 的笔记工具注册为 MCP 工具：@mcp.tool() 装饰器自动生成标准 schema
+  （name / description / inputSchema / outputSchema）
+- stdio 模式下静默等待 JSON-RPC 请求：单独运行时"挂起"是正常现象，不是卡死
+- 依赖：pip install "mcp<2"（mcp 2.x 已把 FastMCP 改名 MCPServer，本文件基于 1.x API）
+
+运行：由 mcp_client.py / agent_mcp.py 以子进程方式启动；也可单独运行验证存活
+"""
 from mcp.server.fastmcp import FastMCP
 
 mcp = FastMCP("notes-server")

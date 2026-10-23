@@ -1,3 +1,14 @@
+"""
+Day 3-4 练习：三工具多功能 Agent
+
+- 工具：get_weather（mock 天气）、calculate（白名单校验的四则计算）、search_files（文件搜索）
+- 复用 Day 1-2 的手写循环骨架，只替换工具集（验证"loop 骨架与工具解耦"）
+- 演示：工具 schema（签名+docstring 自动生成）、并行工具调用、跨工具切换、失败处理（未知城市）
+- 安全点：calculate 的参数是模型生成的不可信输入，采用 正则白名单 + 空 __builtins__ 双重防护
+
+运行：python tool_calling.py（需要 DEEPSEEK_API_KEY）
+trace 输出：tool_calling_trace.jsonl
+"""
 import os
 import json
 import re

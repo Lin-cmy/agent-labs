@@ -13,3 +13,7 @@
 {"step": 0, "thought_summary": "模型这步在干什么", "tool": "search_notes", "args": {"query": "推免 保研 政策"}, "observation": "未找到相关笔记", "cost_estimate": 503}
 {"step": 0, "thought_summary": "模型这步在干什么", "tool": "search_notes", "args": {"query": "Agent Loop ReAct"}, "observation": "- 笔记2：Agent Loop 是观察-思考-行动-观察的循环。\n- 笔记3：ReAct 是 Reasoning + Acting 的组合。", "cost_estimate": 506}
 {"step": 0, "thought_summary": "模型这步在干什么", "tool": "search_notes", "args": {"query": "ReAct 思想 推理与行动"}, "observation": "- 笔记3：ReAct 是 Reasoning + Acting 的组合。\n- 笔记2：Agent Loop 是观察-思考-行动-观察的循环。\n- 笔记1：RAG 的核心思想是检索增强生成——先查资料，再回答问题。", "cost_estimate": 506}
+{"step": 0, "thought_summary": "", "tool": "search_notes", "args": {"query": "检索增强生成"}, "observation": "- 笔记1：RAG 的核心思想是检索增强生成——先查资料，再回答问题。", "cost_estimate": 553}
+{"step": 0, "thought_summary": "", "tool": "search_notes", "args": {"query": "刚刚问了什么 对话记录"}, "observation": "未找到相关笔记", "cost_estimate": 799}
+{"step": 0, "thought_summary": "", "tool": "search_notes", "args": {"query": "检索增强生成"}, "observation": "- 笔记1：RAG 的核心思想是检索增强生成——先查资料，再回答问题。", "cost_estimate": 539}
+{"step": 0, "thought_summary": "", "tool": "search_notes", "args": {"query": "对话记录 提问 总结"}, "observation": "未找到相关笔记", "cost_estimate": 789}

@@ -1,3 +1,12 @@
+"""
+Day 5 练习：Agent 通过 MCP 协议调用跨进程工具
+
+- 与 agent_loop.py 的对比实验：loop 骨架不变，工具来源从"本进程私有函数"换成"MCP 服务器"
+- langchain-mcp-adapters（<0.2）把 MCP 工具转成 LangChain 工具，直接喂给 bind_tools
+- 注意：适配器 0.1.x 不支持 async with，用"实例化 + await get_tools()"模式
+
+运行：python agent_mcp.py（需要 DEEPSEEK_API_KEY 和同目录的 mcp_server.py）
+"""
 import sys, asyncio, os
 from langchain_mcp_adapters.client import MultiServerMCPClient
 from langchain_openai import ChatOpenAI
